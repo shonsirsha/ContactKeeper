@@ -9,11 +9,10 @@ const Register = props => {
   const { setAlert, clearAllAlerts } = alertContext;
 
   const { registerUser, error, clearErrors, isAuthenticated } = authContext;
-
   useEffect(() => {
-    clearErrors();
     clearAllAlerts();
-
+  }, []);
+  useEffect(() => {
     if (isAuthenticated) {
       props.history.push("/");
     }

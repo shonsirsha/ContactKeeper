@@ -12,11 +12,10 @@ const Login = props => {
   const { setAlert, clearAllAlerts } = alertContext;
 
   const { loginUser, error, clearErrors, isAuthenticated } = authContext;
-
   useEffect(() => {
-    clearErrors();
     clearAllAlerts();
-
+  }, []);
+  useEffect(() => {
     if (isAuthenticated) {
       props.history.push("/");
     }
